@@ -23,7 +23,7 @@ int top::readStruct() {
   std::ifstream inFile;
   std::string word;
 
-  inFile.open("../tmp.txt");
+  inFile.open("tmp/tmp.txt");
   if (!inFile) {
     std::cout << "Unable to open file";
     exit(1); // terminate with error
@@ -73,12 +73,12 @@ bool top::isPointInTriangle(int x, int y){
 
 
 int top::writeImage() {
-  std::ofstream outFile("image_tmp.txt");
+  std::ofstream outFile("tmp/image_tmp.txt");
   outFile << FRAME_WIDTH << " " << FRAME_WIDTH << std::endl;
 
   for (int y = 0; y < FRAME_HEIGHT; y++) {
     for (int x = 0; x < FRAME_WIDTH; x++) {
-        outFile << frame[x][y] << std::endl;
+        outFile << "#" << std::setfill('0') << std::hex <<  std::setw(6) << frame[x][y] << std::endl;
     }
   }
   outFile.close();

@@ -40,12 +40,12 @@ if __name__ == "__main__":
         sys.exit(1)
 
     file_name = sys.argv[1]
-    file_path = "../svgs/" + file_name + ".svg"
+    file_path = "svgs/" + file_name + ".svg"
 
     print("SVG Path: ", file_path)
 
     parsed_data = parse_svg_file(file_path)
     for item in parsed_data:
       print(item)
-    write_to_file("../tmp.txt", parsed_data)
+    write_to_file("tmp/tmp.txt", parsed_data)
 
